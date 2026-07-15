@@ -152,15 +152,3 @@ correr los tests E2E completos en CI, define los secretos del repositorio
 `APP_URL`, `APP_USER`, `APP_PASS` (Settings → Secrets → Actions) y habilita el
 job E2E.
 
-## 📤 Publicar en tu GitHub
-
-```bash
-git remote add origin git@github.com:<tu-usuario>/<tu-repo>.git
-git branch -M main
-git push -u origin main
-```
-
----
-
-> ⚠️ Nunca subas tu archivo `.env` real: contiene credenciales. Está protegido
-> por `.gitignore`; comparte solo `.env.example`.
