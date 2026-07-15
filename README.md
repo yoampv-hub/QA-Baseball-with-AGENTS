@@ -1,4 +1,4 @@
-# ⚾ QA Automation Pipeline — Gestión de Bateadores
+# QA Automation Pipeline — Gestión de Bateadores
 
 Framework de automatización de pruebas **end-to-end** para una SPA de gestión de
 jugadores de béisbol, construido con **Python + Pytest + Selenium** sobre el
@@ -13,7 +13,7 @@ de QA** (Manager → Analista → Automation → Auditor).
 
 ---
 
-## 🎯 Qué demuestra este proyecto
+## Qué demuestra este proyecto
 
 - Automatización E2E real contra una aplicación web en vivo (login + CRUD).
 - Arquitectura mantenible **Page Object Model** con localizadores como constantes.
@@ -24,7 +24,7 @@ de QA** (Manager → Analista → Automation → Auditor).
 - **CI** con GitHub Actions.
 - Estándares de calidad codificados y auditados ([`SKILL.md`](SKILL.md)).
 
-## 🤖 Pipeline multi-agente de QA
+## Pipeline multi-agente de QA
 
 Los prompts viven en [`agents/`](agents/) y se orquestan con Claude Code /
 opencode. Cada agente tiene una responsabilidad única:
@@ -47,7 +47,7 @@ flowchart LR
 | **Automation** | [`agents/automation.md`](agents/automation.md) | Escribe el script Pytest + Selenium (POM) |
 | **Auditor** | [`agents/auditor.md`](agents/auditor.md) | Audita el código contra `SKILL.md`: aprueba o rechaza |
 
-## 🧱 Stack
+## Stack
 
 | Herramienta | Uso |
 |-------------|-----|
@@ -59,7 +59,7 @@ flowchart LR
 | pytest-xdist | Ejecución en paralelo |
 | python-dotenv | Configuración por entorno |
 
-## 📁 Estructura
+##  Estructura
 
 ```
 qa-beisbol/
@@ -80,7 +80,7 @@ qa-beisbol/
 └── .env.example            # Plantilla de configuración
 ```
 
-## 🚀 Puesta en marcha
+##  Puesta en marcha
 
 Requisitos: Python 3.11+ y Google Chrome instalado.
 
@@ -109,7 +109,7 @@ Variables en `.env`:
 | `APP_PASS` | Contraseña de prueba |
 | `HEADLESS` | `true` (por defecto) o `false` para ver el navegador |
 
-## ▶️ Ejecución
+##  Ejecución
 
 ```bash
 # Toda la suite (genera reports/report.html)
@@ -129,7 +129,7 @@ pytest -n auto
 - **Reporte HTML:** `reports/report.html`
 - **Screenshots de fallos:** `screenshots/FAIL_<test>_<timestamp>.png`
 
-## ✅ Casos de prueba
+##  Casos de prueba
 
 | ID | Tipo | Escenario |
 |----|------|-----------|
@@ -137,14 +137,14 @@ pytest -n auto
 | CP-002 | Error Path (`regression`) | Botón deshabilitado con campos obligatorios vacíos |
 | CP-003 | Edge Case (`regression`) | Nombre con caracteres especiales / límite de longitud |
 
-## 📏 Estándares de calidad
+##  Estándares de calidad
 
 Todo el código se rige por [`SKILL.md`](SKILL.md): selectores robustos (sin
 XPath absolutos), solo esperas explícitas (sin `time.sleep` ni waits mezclados),
 asserts significativos, POM, evidencia obligatoria y secretos por entorno. El
 agente **Auditor** verifica el cumplimiento antes de aprobar cualquier entrega.
 
-## 🔁 Integración continua
+## Integración continua
 
 [`.github/workflows/ci.yml`](.github/workflows/ci.yml) instala dependencias y
 valida la colección de la suite (`pytest --collect-only`) en cada push/PR. Para
