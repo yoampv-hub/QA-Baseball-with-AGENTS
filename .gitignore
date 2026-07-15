@@ -1,0 +1,27 @@
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Reportes y evidencia de ejecución
+reports/
+screenshots/
+allure-results/
+allure-report/
+*.log
+
+# Sistema operativo / editor
+.DS_Store
+.idea/
+.vscode/
